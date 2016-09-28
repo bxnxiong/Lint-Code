@@ -1,6 +1,14 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Sep.28
+
+- No.104 Merge K Lists
+
+first I tried naive way: loop through every list and see if its first element is minimum, if yes then move pointer to next element, if not check next linked list. It is correct but does not pass time complexity for cases where every linked list looks like: X->null. 
+
+the improved version is to use merge-sort like implementation, divide and sort two half lists recursively. now it passes all the test.
+
 # Sep.27
 - No.113 Remove Duplicates from Sorted List
 
@@ -28,6 +36,9 @@ quick sort has swapping operations, if changing links I think might be very trou
 # Sep.25
 - No.98 Sort List problem - merge sort implementation
 
-This is the first time I encounter linked list. The takeaway is the manipulation of linked list, plus I learned to use yield to make a generator of linked list and do the common iterations.
+this is the first time I encounter linked list. The takeaway is the manipulation of linked list, plus I learned to use yield to make a generator of linked list and do the common iterations.
 My code does not pass the time complexity because I store all (partial) linked lists inside another list, which will bring in extra computation to initialize such list first. The successful implementation I found on https://lefttree.gitbooks.io/leetcode/content/linkedList/sortList.html
 actually partition linked list into two halves, which I didn't know previously. Also by sorting linked lists, this program actually changes the links instead of values which is new to me too.
+
+- No.97 Validate Binary Tree
+
