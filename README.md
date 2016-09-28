@@ -7,7 +7,7 @@ No.99 Reorder List problem - naive divide implementation and half-reverse-combin
 The first implementation does not pass time complexity, the latter I learned from source:
 http://www.cnblogs.com/zuoyuan/p/3700846.html
 and it should work. 
-* updated tonight for reverse.py for special cases where head1/head2 could be null.
+- updated tonight for reverse.py for special cases where head1/head2 could be null.
 Passed the test on lint code successfully.
 
 # Sep.26
