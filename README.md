@@ -42,3 +42,10 @@ actually partition linked list into two halves, which I didn't know previously. 
 
 - No.97 Validate Binary Tree
 
+the idea is to not only check the validity of left and right child node of their parent node, also check the validity of:
+
+-- all right nodes of the left child
+
+-- and all left nodes of the right child
+
+using while loop can do that
