@@ -13,35 +13,36 @@ class Solution:
     """
     def mergeKLists(self, lists):
         # write your code here
-        if len(lists) > 0:
-            n = len(lists)
-            result = ListNode(0)
-            tmp = result
+        
+        while len(lists) > 2:
+            middle = len(lists) / 2
+            left = self.mergeKLists(lists[:middle])
+            right = self.mergeKLists(lists[middle:])
+            return self.sort(left,right)
+        if len(lists) == 1:
+            return lists[0]
+        elif len(lists) == 2:
+            left,right = lists[0],lists[1]
+            return self.sort(left,right)
             
-            while not self.isnull(lists):
-                value_min = [float('Inf'),None]
-                
-                for i,head in enumerate(lists):
-                    if head:
-                        if head.val < value_min[0]:
-                            value_min[0] = head.val
-                            value_min[1] = i
-                
-                if lists[value_min[1]]:
-                    min_node = lists[value_min[1]]
-                    tmp.next = min_node
-                    tmp = tmp.next
-                    lists[value_min[1]] = min_node.next
-                
-            return result.next
         
+    def sort(self,h1,h2):
+        result = ListNode(0)
+        pointer = result
         
-    def isnull(self,lists):
-        result = True
+        while h1 and h2:
+            if h1.val < h2.val:
+                pointer.next = h1
+                h1 = h1.next
+                pointer = pointer.next
+            else:
+                pointer.next = h2
+                h2 = h2.next
+                pointer = pointer.next
+                
+        if h1:
+            pointer.next = h1
+        elif h2:
+            pointer.next = h2
         
-        for i in lists:
-            if i:
-                result = False
-                break
-        return result
-
+        return result.next
