@@ -18,22 +18,26 @@ class Solution:
         # step 2: reverse the second half linked list
         # step 3: create new linked list using those two halves
         
-        head1,head2 = self.half(head)
-        head2 = self.reverse(head2)
-        
-        result = ListNode(0)
-        pointer = result
-        
-        while head1 and head2:
-            pointer.next = head1
-            head1 = head1.next
-            pointer = pointer.next
-            pointer.next = head2
-            head2 = head2.next
-            pointer = pointer.next
-        
-        result = result.next
-        return result
+        if head:
+            head1,head2 = self.half(head)
+            head2 = self.reverse(head2)
+            
+            result = ListNode(0)
+            pointer = result
+            
+            while head1 and head2:
+                pointer.next = head1
+                head1 = head1.next
+                pointer = pointer.next
+                pointer.next = head2
+                head2 = head2.next
+                pointer = pointer.next
+            
+            if head1:
+                pointer.next = head1
+                
+            result = result.next
+            return result
             
         
     def half(self,head):
@@ -55,15 +59,16 @@ class Solution:
         return head1,head2
         
     def reverse(self,head):
-        dummy = ListNode(0)
-        dummy.next = head
-        h2 = head.next
-        head.next = None
-        
-        while h2:
-            tmp = h2
-            h2 = h2.next
-            tmp.next = dummy.next
-            dummy.next = tmp
-        
-        return dummy.next
+        if head:
+            dummy = ListNode(0)
+            dummy.next = head
+            h2 = head.next
+            head.next = None
+            
+            while h2:
+                tmp = h2
+                h2 = h2.next
+                tmp.next = dummy.next
+                dummy.next = tmp
+            
+            return dummy.next
