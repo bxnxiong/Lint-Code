@@ -1,6 +1,23 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Sep.29
+
+- No.105 Copy List with Random Pointer
+
+first I tried naive way: using deepcopy, but it will exceed the memory limit, probably because when using deepcopy to copy a node in linked list, it will also copy the next and random node too.
+
+then I referenced:http://www.cnblogs.com/zuoyuan/p/3745126.html
+
+and improved the code a bit. three steps are involved in the reference and in my code:
+
+-- step 1: insert node of same label between original node and its next node, i.e. 1->1->2->2->3->3 compared to old list 1->2->3
+
+-- step 2: to fill up random node information of new nodes, reference the old node, if pointer points to old node(where random is not None, if it's None then don't bother), set its next node's pointer to next node of its random node, i.e. new_node.random = old_node.random.next, where new_node = old_node.next
+
+-- step 3: set step = 2 and change next pointers to every other node in the list, then return.
+
+
 # Sep.28
 
 - No.104 Merge K Lists
