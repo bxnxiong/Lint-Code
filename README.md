@@ -1,6 +1,18 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Sep.30 & Oct.1
+
+- No.108 Palindrome Partition II
+
+my own attempt was not successful, by using LCS to calculate s and its reverse string, it was not correct for this problem because LCS does not distinguish continuous and discontinuous palindromes. The reference I found online actually was way easier than my solution, using a simple idea as well, by creating table and see if 
+1. s[i]==s[j] and if 
+2. j and i are adjacent(j-i\<2) or previous letters are the same:s[i-1]==s[j+1]
+
+the trick here is instead of judging previous letters through s itself, use a boolean table to check if all previous letters are same. using string s will not have that information.
+
+finally keep a dp list to decide the minimum # of cuts
+
 # Sep.29
 
 - No.105 Copy List with Random Pointer
