@@ -3,17 +3,47 @@ history of dummy tries on Lint Code problems
 
 # Sep.30 & Oct.1
 
+- No. 118 Distinct Subsequences
+
+also referenced from:
+http://www.cnblogs.com/zuoyuan/p/3767256.html
+
+first I rephrased the problem for quite some time. turns out it is phrased as: find # of times of subsequence T appears in S.
+
+this is also a dynamic programming problem.
+
+let s be our source word and t be our target subsequence. basically, if s[i] == t[j], then # of times of subsequence t[:j+1] in s[:i+1] depends on # of subsequences t[:j] in s[:i], plus # of times of subsequence t[:j+1] appear in s[:i]. if s[i] != t[j], then timesOf(t[:j+1]) in s[:i+1] = timesOf(t[:j]) in s[:i]
+
+build dynamic programming table, table[i][j] represents # of times of subsequences t[:j+1] appear in s[:i+1]
+
+- No.119 Edit Distance
+
+this is a classic problem using dynamic programming. no doubt using DFS will be too slow. this solution is based on reference online:
+http://www.cnblogs.com/zuoyuan/p/3773134.html
+
+some tricks when designing this dp table:
+
+there are 3 methods: add, delete and replace. if s is our source word and t is our target word(final state), then adding in s == deleting in t. realizing this will help make the table. for example, table[s][t] = table[s-1][t] + 1(adding in s) = table[s][t-1] + 1(adding in t, or deleting in s). 
+
+then decide if s[i] == t[j], if yes then we only need to care about min edit among three:table[s-1][t-1],table[s-1][t] + 1 and table[s][t-1] + 1, if no then also consider among three:table[s-1][t-1]+1,table[s-1][t] + 1 and table[s][t-1] + 1. notice here the first operation got extra +1 because it is actually doing 'replacing'.
+
 - No.108 Palindrome Partition II
 
 my own attempt was not successful, by using LCS to calculate s and its reverse string, it was not correct for this problem because LCS does not distinguish continuous and discontinuous palindromes. The reference I found online actually was way easier than my solution, using a simple idea as well, by creating table and see if 
 1. s[i]==s[j] and if 
-2. j and i are adjacent(j-i<2) or previous letters are the same:s[i-1]==s[j+1]
+2. j and i are adjacent(j-i<2) or previous letters are the same:s[i-1]=s[j+1]
 
 the trick here is instead of judging previous letters through s itself, use a boolean table to check if all previous letters are same. using string s will not have that information.
 
 finally keep a dp list to decide the minimum # of cuts
 
 # Sep.29
+
+- No.106 Convert Sorted List to Balanced BST
+
+divide linked list into two halfs, and recursively use sortedListToBST function to build tree. if left or right half has only one element,return that element as single root, if has two elements, use the smaller one as root and build its right child node using its next node.
+
+it should be very easy to implement this.
 
 - No.105 Copy List with Random Pointer
 
