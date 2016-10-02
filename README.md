@@ -3,6 +3,14 @@ history of dummy tries on Lint Code problems
 
 # Oct.2
 
+- No.116 Jump Game
+
+two implementations:
+
+1. greedy. always choose next step with most available steps on that step.
+
+2. dynamic programming. keep a boolean dp list showing if current step can be reached by previous steps.
+
 - No.107 Word Break
 
 reference:http://www.cnblogs.com/zuoyuan/p/3760660.html
