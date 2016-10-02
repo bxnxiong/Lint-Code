@@ -1,6 +1,30 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.2
+
+- No.107 Word Break
+
+reference:http://www.cnblogs.com/zuoyuan/p/3760660.html
+
+the above reference provides implementation of the core concept of this problem: dynamic programming. it's easier to just ask if it's possible to break the word, so dynamic programming will be enough. however, the code in reference does not pass Lint Code tests for time limits. so I modified and added some cases besides simply using dynamic programming:
+
+1. if dictionary is empty: then see if s is empty string or not
+
+2. if dictionary only has single letters: just create distinct letter lists in s and decide if the list is the same as dictionary keys
+
+3. if dictionary has all keys of same length: break s into pieces of that length, take the distinct list of those pieces, and decide if it is the same as dictionary keys
+
+4. finally if the above situation does not apply, using dynamic programming
+
+the modified code successfully solved the problem on Lint Code
+
+this problem share similarity with the Palindrome Partition II problem in that:
+
+they both use boolean dynamic programming
+
+but Palindrome should have a table to store minimum # of cuts, so this problem is actually easier to solve than Palindrome. but still I didn't think of the solution by myself, so I still need more practice on dynamic programming problems.
+
 # Sep.30 & Oct.1
 
 - No. 118 Distinct Subsequences
