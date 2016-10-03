@@ -3,6 +3,14 @@ history of dummy tries on Lint Code problems
 
 # Oct.2
 
+- No.117 Jump Game II
+
+use the greedy approach will solve this in O(n) time.
+
+basic idea is to keep track of farthest position that current and all the past position can go, using 'farthest' to keep that information. 'curr' will remember where we are currently, and 'steps' will memorize how many steps we need to take to go to the farthest position.
+
+therefore, in the end we can just simply return steps we need to take to the farthest position. as long as the farthest position is no smaller than the last position in the list, it is safe to say that we can go to the end of list using same amount of steps.
+
 - No.116 Jump Game
 
 two implementations:
