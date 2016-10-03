@@ -1,6 +1,16 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.3
+
+- No.120 Word Ladder
+
+search for elements in sets has same time complexity as dictionary, so use BFS to try all possible mutations at every step, then check if new mutations is what we're looking for. if not, continue to find mutations of mutations.
+
+- No.124 Longest Consecutive Sequence
+
+using dictionary to decide if adjacent numbers of current number also exist in dictionary, and memorize the longest length of those consecutive numbers. test for every number in the dictionary, and update the longest length
+
 # Oct.2
 
 - No.117 Jump Game II
