@@ -3,6 +3,10 @@ history of dummy tries on Lint Code problems
 
 # Oct.3
 
+- No.123 Word Search
+
+we only need to find if the path is possible so just use DFS will be enough. the tricky part is under every path we need to memorize if the positions we have visited or not, and if the path is not a solution how we can restore it. the solution to this part is to temporarily change the visited position to '#', if its next dfs is not successful, restore it back to its original letter on the board
+
 - No.120 Word Ladder
 
 search for elements in sets has same time complexity as dictionary, so use BFS to try all possible mutations at every step, then check if new mutations is what we're looking for. if not, continue to find mutations of mutations.
