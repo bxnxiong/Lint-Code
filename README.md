@@ -3,6 +3,10 @@ history of dummy tries on Lint Code problems
 
 # Oct.7
 
+- No.135 Combination Sum
+
+keep a list of values within range of target value, l[value] = [l[value-i].append(i) for i in candidates]
+
 - No.127 Topological Sort - BFS and DFS implementation
 
 previous days were busy so I didn't do daily updates.
