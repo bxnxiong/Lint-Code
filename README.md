@@ -21,6 +21,8 @@ using coloring dictionary to decide the status of node we're visitng:
 
 after we done searching the whole branch, we mark those nodes black, and start a new branch for searching.
 
+reference: https://algocoding.wordpress.com/2015/04/05/topological-sorting-python/
+
 # Oct.3
 
 - No.123 Word Search
