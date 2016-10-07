@@ -1,6 +1,26 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.7
+
+- No.127 Topological Sort - BFS and DFS implementation
+
+previous days were busy so I didn't do daily updates.
+
+1. BFS implementation:
+
+adding all nodes with 0 in degree(nodes at the top or leftmost) to a queue, and pop up first element in queue, store 0 in-degrees in result, update following nodes of the popped up node their in degrees, and loop the pop-up update process . return [] if graph does not contain all nodes in graph, else return result
+
+2. DFS implementation:
+
+using coloring dictionary to decide the status of node we're visitng: 
+
+  -- if it's white then we haven't visited them before. 
+  
+  -- if it's grey then we have visited them along the way(and haven't finished the whole branch searching), that means we have a cycle
+
+after we done searching the whole branch, we mark those nodes black, and start a new branch for searching.
+
 # Oct.3
 
 - No.123 Word Search
