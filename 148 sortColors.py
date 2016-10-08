@@ -22,7 +22,7 @@ class Solution:
             else:
                 i += 1
             
-            if i0 >= i2 - 1 or i > i2:
+            if i > i2:
                 break
             
         return nums
