@@ -3,6 +3,15 @@ history of dummy tries on Lint Code problems
 
 # Oct.7
 
+- No.148 Sort Colors
+
+reference:
+http://www.cnblogs.com/zuoyuan/p/3775832.html
+
+main idea is to use two pointers for 3 categories(0s,1s and 2s). First pointer starts from 0, second pointer starts backwards from last position. whenever current posision is 2, swap current element with element at second pointer, then second pointer moves backwards to next, if is 0 first pointer moves to next, and at the same time move cursor to next one. tricky part is when to move cursor forward, if it moves forward when current position is 2, then the swapped element of color 2 will escape being checked and swapped to other positions. but if it's color 0 and will be swapped with first pointer, it is safe to say that we can move cursor forward since all elements behind are 0s.
+
+the reference does not AC because when cursor moves beyond second pointer,second pointer will point to color 1 or 0, the program needs to stop when cursor approaches second pointer.
+
 - No.137 Clone Graph
 
 use dictionary to remember if the node is cloned or not
@@ -12,6 +21,9 @@ DFS here is implemented recursively, BFS used a queue.
 - No.135 Combination Sum
 
 keep a list of values within range of target value, l[value] = [l[value-i].append(i) for i in candidates]
+
+reference: http://www.cnblogs.com/zuoyuan/p/3753507.html
+
 
 - No.127 Topological Sort - BFS and DFS implementation
 
