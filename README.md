@@ -3,6 +3,12 @@ history of dummy tries on Lint Code problems
 
 # Oct.7
 
+- No.137 Clone Graph
+
+use dictionary to remember if the node is cloned or not
+
+DFS here is implemented recursively, BFS used a queue.
+
 - No.135 Combination Sum
 
 keep a list of values within range of target value, l[value] = [l[value-i].append(i) for i in candidates]
