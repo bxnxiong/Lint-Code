@@ -1,6 +1,46 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.9
+
+- No.161 Rotate Image
+
+difficult parts about this problem are:
+
+1. define pattern to rotate 90 degrees
+
+the pattern for rotating 90 degree is : clockwise: (row,col) -> (col,n-1-row); counter-clockwise:(row,col) -> (n-1-col,row)
+
+2. how to do it in space, i.e. swapping
+
+when rotating, define 4 positions whose rotating positions are other 3's current position as a cycle.(eg. 4 corner elements are a pair)
+
+to do it in space, need to rotate same value 3 times backwards to the position it is supposed to be, that way when performing the cycle the other three elements will also be placed in the right position when they are swapping with that element.
+
+then move to next element on the same row((row,col+1)) and repeat the above cycle swapping.
+
+then move into more center layer(i.e. the inner n-1 by n-1 matrix) and repeat cycle swapping of all elements(except the last one since it's in the cycle with the first element) on the first row
+
+- No.160 Find Minimum In Rotated Array II
+
+this version has duplicate elements in list. eg. [9,9,9,1,1,1]
+
+when writing logic expressions need to consider special cases like this, first judge if distinct numbers in left half and right half are the same and are greater than 1 or not. 
+
+1. if they both have more than 1 distinct element, same as previous version just need to see if first element > last element.
+
+2. if one of them has only 1 distinct but the other one has more than 1 distinct, see if the list with more than 1 distinct element has its first element > last element, or if the first element of that list is NO LESS than first element of the other list. eg.[1,1,1,1,-1,1]. if true find in that diversified list, else return the value of the other list
+
+- No.159 Find Minimum In Rotated Array
+
+this version suppose elements in array are distinct
+
+uses idea from merge-sort, divide list into half and decide which part the minimum element is at, then divide again
+
+- No.152 Combinations
+
+basically it is an implementation of forming all distinct combinations of C(n,k)
+
 # Oct.8
 
 - No.151 Best Time to Buy and Sell Stock III
