@@ -3,6 +3,14 @@ history of dummy tries on Lint Code problems
 
 # Oct.9
 
+- No163 Unique Binary Search Trees
+
+use a list to memorize # of trees that from 1 to i have, then use dynamic programming to calculate dp[n] = sum(dp[i] * dp[n-i]) for i from 1 to n-1
+
+- No.162 Set Matrix Zeroes
+
+this is easy. just be careful when looping through every row, instead of set all to zeroes once we meet one 0, we should use a list to store all col numbers that have such 0s, then transform rows. and in another for-loop,set all rows at same col that have 0s to 0.
+
 - No.161 Rotate Image
 
 difficult parts about this problem are:
