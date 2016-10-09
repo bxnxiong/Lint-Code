@@ -1,8 +1,21 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
-# Oct.7
+# Oct.8
 
+- No.151 Best Time to Buy and Sell Stock III
+
+this one is harder than previous two, since we are only allowed to make 2 transactions, we can use two lists to store maximum profit before time i and after time i. then add them up. the tricky point is, when we create the list storing maximum profit after time i, we keep track of highest price, instead of keeping track of lowest price, like we did in previous two problems. the reason is that this list is made after the first transaction, so the lowest price is not the actual lowest price of the whole list. so equivalently we memorize the highest price and get the maximum profit.
+
+- No.150 Best Time to Buy and Sell Stock II
+
+since we're able to make multiple transactions, the best strategy to gain more profit is to trade before the price is about to go down, when the price goes down, find the lowest price during downtrend , when the price goes up, find the highest price during uptrend. add all these profits up.
+
+- No.149 Best Time to Buy and Sell Stock
+
+this problem is easy. Just use a variable to store the lowest price and get maximum profit by comparing the historical max profit with current profit.
+
+# Oct.7
 - No.148 Sort Colors
 
 reference:
