@@ -1,9 +1,15 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.10
+
+- No.164 Unique Binary Search Trees II
+
+this problem needs to return all possible trees. use dfs to do that. store all subsequent trees into a list, when generating n+1 nodes tree, use trees generating n nodes(stored in the list) and adding the n+1th new node on the top.
+
 # Oct.9
 
-- No163 Unique Binary Search Trees
+- No.163 Unique Binary Search Trees
 
 use a list to memorize # of trees that from 1 to i have, then use dynamic programming to calculate dp[n] = sum(dp[i] * dp[n-i]) for i from 1 to n-1
 
