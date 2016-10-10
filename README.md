@@ -3,6 +3,10 @@ history of dummy tries on Lint Code problems
 
 # Oct.10
 
+- No.170 Rotate list
+
+to rotate a linked list. trick is to form a circle using the linked list, then use k%n to define how many rotate steps the circle should perform. then cut the circle at final step. return the linked list.
+
 - No.164 Unique Binary Search Trees II
 
 this problem needs to return all possible trees. use dfs to do that. store all subsequent trees into a list, when generating n+1 nodes tree, use trees generating n nodes(stored in the list) and adding the n+1th new node on the top.
