@@ -1,6 +1,23 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.20 
+
+- No.184 Largest Number
+
+this is to my surprise not a simple problem, it has 3 key take aways for me.
+
+1. the most difficult one for me is that I'm not familiary with cmp parameter in sorted(). 
+2. also there's a lstrip function help delete first element same as value given in lstrip(). 
+3. last take away is that empty string is None, so can return some string or '' on the same line.
+
+# Oct.19
+
+- No.171 Anagrams
+
+this is an easy problem, simply store all anagrams of same origin into dictionary, with set value as their key value, value will be a list with first element saying how many anagrams(if only 1 then don't return it) and second having specific anagram strings.
+
+then loop through the keys in dict, and append second elements in dict, then return
 # Oct.10
 
 - No.170 Rotate list
