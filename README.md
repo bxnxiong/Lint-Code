@@ -1,6 +1,18 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.24 
+
+- No.189 First Missing Positive
+
+this is a tricky solution, the first step is to find out range of possible missing positive first(that's why we need a len() to decide range of possible missings). then since we need to do it in O(1) space we basically can only mutate the list itself, therefore by treating values in list that are smaller than n as 'index' of list, we assign negative signs to those positions, then finaly if we find some number that is positive then we know that we haven't visited that position, in this case we don't have the value, and since the positions are in order(0th,1th,2nd...) if we loop through the mutated list, the first one we encountered that is positive should be the one we're looking for.
+
+# Oct.21
+
+- No.187 Gas Station
+
+I figured it out by myself, use remaining gas list and a greedy method: basically I use a max function to decide whether it's better to start from current position, or continue from previous position, by judging max(current_position_gas,current_position_gas+previous_remaining_gas). Then from results of this list if previous position is negative, and current position is positive, and current position has max remaining gas, I choose to start from here.
+
 # Oct.20 
 
 - No.184 Largest Number
