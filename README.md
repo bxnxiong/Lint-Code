@@ -1,13 +1,37 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.26
+
+- No.374 Spiral Matrix
+
+just be careful when m is odd or n is odd, and when matrix is of empty lists or the matrix itself is empty.
+
+# Oct.25
+
+- No.363 Trapping Rain Water
+
+key idea is to find bar number(spike numbers may not be bars, eg. [100,50,99,50,100], 100 is bar but 99 is not), and calculate diffs of all numbers between two neighboring bars: first calculate diffs of all numbers against first bar, then diffs against second bar, and take the minimum sum of diffs. add the minimum sum to the result
+
 # Oct.24 
 
 - No.189 First Missing Positive
 
 this is a tricky solution, the first step is to find out range of possible missing positive first(that's why we need a len() to decide range of possible missings). then since we need to do it in O(1) space we basically can only mutate the list itself, therefore by treating values in list that are smaller than n as 'index' of list, we assign negative signs to those positions, then finaly if we find some number that is positive then we know that we haven't visited that position, in this case we don't have the value, and since the positions are in order(0th,1th,2nd...) if we loop through the mutated list, the first one we encountered that is positive should be the one we're looking for.
 
-# Oct.21
+# Oct.23 
+
+- No.191 Maximum Product Array
+
+1. use three helper variables: maximum(maximum product), minimum(minimum product(usually negative)), and curr(current number)
+2. update three variables as we loop through list:
+ 
+  a. maximum = max(maximum \* curr, minimum \* curr, curr)
+  b. minimum = min(maximum \* curr, minimum \* curr, curr)
+  
+then just update result if maximum > result
+
+# Oct.22
 
 - No.187 Gas Station
 
