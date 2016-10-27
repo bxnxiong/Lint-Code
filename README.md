@@ -3,6 +3,22 @@ history of dummy tries on Lint Code problems
 
 # Oct.26
 
+- No.388 Permutation Sequence
+
+if we know which permutation we're trying to get, we can actually calculate every number. For example, first number(from left to right) is chosen by (k-1)/factorial(n-1). the reason is that factorial(n-1) indicates how many possible permutations will start with same first number, k-1 is because indexing starts from 0 instead of 1.
+
+then when we move to next number, letting n -= 1, and k = k%factorial(n-1) if k%factorial(n-1) != 0 else k, k is calculated like this because when we move to next number, we need to first consider if k > factorial(n-1) (if yes the new k should be the remainder of that factorial) and repeatedly calculate the number like we did above.
+
+- No. 381 Spiral Matrix II
+
+this is relatively easy, given that I've practiced solving Spiral Matrix, this version only needs to create an empty square matrix, and then fill in numbers in an spiral order, like how I read those spiral numbers out of the matrix in first version.
+
+- No.380 Intersection of Two Linked List
+
+since they have intersection, meaning that if we go backwards,the pointer to the longer list should be determined by the beginning of the shorter linked list, once we find the pointer for the longer linked list, we can compare parallely of two linked list until we find nodes with same value.
+
+therefore we only need to calculate how long two linked lists are, then set pointer to the longer one with (len(longer)-len(shorter)) and compare pair by pair until we find same value.
+
 - No.374 Spiral Matrix
 
 just be careful when m is odd or n is odd, and when matrix is of empty lists or the matrix itself is empty.
