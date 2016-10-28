@@ -1,6 +1,40 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.28
+
+- No.392 House Robber
+
+the transition function for this dynamic programming problem is as follows:
+
+have a list storing maximum gain so far. 
+
+gain[i] = max(gain[i-1],gain[i-2]+current_gain[i])
+
+emission:
+
+gain[0] = current_gain[0];gain[1] = current_gain[1]
+
+# Oct.27
+
+- No.383 Container With Most Water
+
+this is similar to Trap Water problem. but is actually simpler than that. we just need to find bars and calculate area with two bars found and return the max area. when finding bars, start from very beginning and very end, and let them get closer by moving left bar 1 step right if left bar is lower than right bar, or by moving right bar 1 step left if right bar is no lower than left bar.
+
+- No.384 Longest Substring Without Repeating
+
+this is a dynamic programming problem. the key is to find the transition function so that it keeps longest non-repeating substring. 
+
+here the transition function is min(i-book[s[i]][0],book[s[i-1]\[1]+1]). 
+
+i is the index of current str, book is a dictionary remembering two things:
+
+1. the index of current letter(before visiting current letter, at which index does current letter appears). 
+
+2. the length of substring ending in current letter, after previous current letter appears. eg. given 'abacda', changes in book['a'] would be (0,1),(2,2),(5,3). 
+
+this way will guarantee the right answer because the length of substring will not contain any repeating letters. the last thing I did to solve this problem is simply update result when I'm updating length of substring and that length is > current result
+
 # Oct.26
 
 - No.388 Permutation Sequence
