@@ -1,6 +1,17 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Oct.30
+
+- No.534 House Robber II
+
+key is to loop forward and backward to decide if the maximum gain contains first element and last element. if both contains, we have to choose from sublist nums[:-1] and nums[1:] and choose maximum gain among these two sublists.
+
+- No.392 House Robber
+
+fixed wrong initiation(or emission):
+gain[1] should be max(current_gain[1],gain[0])
+
 # Oct.28
 
 - No.392 House Robber
