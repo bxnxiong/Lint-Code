@@ -11,9 +11,8 @@ class Solution:
         res = ''
         for i in range(len(values)-1,-1,-1):
             times = n / values[i]
-            #print n,values[i]
+            
             if times == 4 and str(n)[0] == '4':
-                #print 'here'
                 res = res + romans[i] + romans[i+1]
                 n -= values[i+1]-values[i]
             elif times == 1 and str(n)[0] == '9':
