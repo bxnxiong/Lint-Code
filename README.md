@@ -1,7 +1,31 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Nov.7
+
+- No.406 Minimum Size Subarray Sum
+
+1. O(n) version
+
+I originally tried to start from 0 and nth position at the same time and then shink the window size and return it. but this turns out to be a wrong solution because in some cases, you can get stuck by a very large number, followed by 1s all the way down, eg. 8,4,1,1,10,1 with target sum = 12 will give me 3 instead of 2, so I should use more than 1 window to do that. references say such method is 'sliding window', where you start from first element, expand the window size until you get total sum >= target, then shrink it by deleting left-side element and update total sum, do that until your total sum < target, then move rightward.
+
+2. O(nlogn) version
+
+it's more challenging to think of a way to do it in O(nlogn), but the solution is very familiar. it uses divide and conquer, instead of changing window size as you move along the sequence, you decide the size of window first, then half the size if there are subarrays of that size which have total sum >= target, or increase the size to (previous_size+size)/2. The only trivial part here is since I used a 'visited' dictionary to stop the while loop, if solution size = 4, and now pre_size = 7, if size = 3 is not possible, updated size = (3+7)/2 = 5 is possible, then updated size becomes 2 and it's not possible, we check (2+5)/2 = 3, unfortunately we visited that already but we haven't visited 4 yet, so outside the loop, I also checked if any numbers between size and pre_size is not visited, and those numbers are very possibily the solution.
+
+# Oct. 31
+
+- No.200 Longest Palindromic Substring
+
+there are two types of palindromic substring, one is of type 'ABA', and the other is of type 'ABBA'. So we need a function to be able to  return substring given different types. And we loop through every character and check if those two types exist, if yes then set result to those of maximum length discovered so far.
+
 # Oct.30
+
+- No. 535 House Robber III
+
+This is House Robber problem implemented in a tree structure. 
+
+Main idea is to calculate maximum gain between those for nodes below left child and below the right child, plus the root value, and those begin with left child and right child. So we should return a tuple when calculating maximum possible gain, one value is root.val+left_gain+right_gain, the other is children_of_left_gain + children_of_right_gain.
 
 - No.534 House Robber II
 
