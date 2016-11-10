@@ -20,8 +20,7 @@ class Solution:
                         dp[r][c] = min(dp[r-1][c-1],dp[r][c-1],dp[r-1][c]) + 1
                     else:
                         dp[r][c] = 0
-                    if r == 3 and c == 0:
-                        print dp[r][c],res
+
                 if dp[r][c] > res:
                     res = dp[r][c]
         
