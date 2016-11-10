@@ -1,7 +1,39 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Nov.10
+
+- No.186 Max Point on a Line
+
+to judge if three or more points are on the same line, just need to calculate if their pairwise slope are of same value. use a dictionary to store value of slopes between every anchor point and rest of the points, and choose the slope with max frequency. 
+
+just need to be careful division by 0 error when calculating slopes, and when there are duplicate points in the list. if there are duplicates, the result should be max frequency of slopes + num of duplicate points of that anchor point.
+
+- No.436 Maximal Square
+
+dynamic programming problem. for every 2x2 square, if the value of lower right number in the original matrix is 1, in dp table, lower right number should be the minimum value of its 3 neighbors, plus 1, else in dp table set it to 0. when initiating the dp table, let first row and first column of dp table has same value as original matrix. after assigning value of dp\[r][c], keep maximum value all those dp values and return the maximum.
+
+# Nov.9
+
+- No.428 Power Function
+
+just need to be careful when the power is odd, or power is negative
+
+# Nov.8
+
+- No.424 Evaluate Reverse Polish Notation
+
+this problem will exceed memory limit if do by recursion. so it has to be done using stack data structure.
+
+- No.419 Roman to Integer
+
+once we have worked on problem 418(integer to roman), this problem should not be very difficult to solve. simply judge if the lefthand side symbol has smaller value than the current symbol(that's when subtractive notation happens)
+
 # Nov.7
+
+- No.418 Integer to Roman
+
+the tricky part of this problem is that it has subtractive notation, for numbers 4\*(10\*\*x) and 9\*(10\*\*x). we can deal with those judging if the division is 4, and divisor starts with '4', or division is 1 and divisor starts with '9' (ignoring either division or divisor in the if-statement will result in wrong results).
 
 - No.406 Minimum Size Subarray Sum
 
