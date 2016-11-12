@@ -9,16 +9,13 @@ class Solution:
         if self.isPalindrome(s):
             res.append([s])
         for split in range(1,len(s)+1):
-            #left = s[:split]
-            #right = s[split:]
             
             if self.isPalindrome(s[:split]):
                 left = [[s[:split]]]
-            
-
                 right = self.partition(s[split:])
             
                 tmp = [left[0]+right[j] for j in range(len(right))]
+                
                 for i in tmp:
                     if i not in res:
                         res.append(i)
