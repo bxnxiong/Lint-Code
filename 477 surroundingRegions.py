@@ -9,10 +9,10 @@ class Solution:
             connected.append((r,c))
         if len(board) > 0:
             rows = len(board);cols = len(board[0]);connected = []
-            for c in range(cols):# only check first and last row
-                fill(0,c);fill(rows-1,c)
-            for r in range(rows):# only check first and last col
-                fill(r,0);fill(r,cols-1)
+            for c in range(cols):
+                fill(0,c);fill(rows-1,c)# only check first and last row
+            for r in range(rows):
+                fill(r,0);fill(r,cols-1)# only check first and last col
             while connected != []:
                 r,c = connected.pop()
                 fill(r-1,c);fill(r+1,c);fill(r,c-1);fill(r,c+1)
