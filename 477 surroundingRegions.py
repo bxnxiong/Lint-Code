@@ -3,44 +3,20 @@ class Solution:
     # @return nothing 
     def surroundedRegions(self, board):
         # Write your code here
-        connected = []
-        res = []
+        def fill(r,c):
+            if r < 0 or r >= rows or c < 0 or c>= cols or board[r][c]!='O':return
+            board[r][c] = 'f'
+            connected.append((r,c))
         if len(board) > 0:
-            rows = len(board)
-            cols = len(board[0])
-            visited = [[0]*cols for r in range(rows)]
-            
-            for r in [0,rows-1]: # only check first and last row
-                for c in range(cols):
-                    if board[r][c] == "O":
-                        connected.append((r,c))
-                        visited[r][c] = 1
-            
-            for c in [0,cols-1]: # only check first and last col
-                for r in range(rows):
-                    if board[r][c] == "O":
-                        connected.append((r,c))
-                        visited[r][c] = 1
-            
-            res = connected[:]
-            
+            rows = len(board);cols = len(board[0]);connected = []
+            for c in range(cols):# only check first and last row
+                fill(0,c);fill(rows-1,c)
+            for r in range(rows):# only check first and last col
+                fill(r,0);fill(r,cols-1)
             while connected != []:
                 r,c = connected.pop()
-                
-                for i in range(cols):
-                    if visited[r][i] != 1 and abs(c-i) == 1 and board[r][i]=="O":
-                        visited[r][i] = 1
-                        connected.append((r,i))
-                        res.append((r,i))
-                
-                for i in range(rows):
-                    if visited[i][c] != 1 and abs(r-i) == 1 and board[i][c]=="O":
-                        visited[i][c] = 1
-                        connected.append((i,c))
-                        res.append((i,c))
-        
+                fill(r-1,c);fill(r+1,c);fill(r,c-1);fill(r,c+1)
             for r in range(rows):
                 for c in range(cols):
-                    if board[r][c] == 'O':
-                        if (r,c) not in res:
-                            board[r][c] = 'X'
+                    if board[r][c] == 'f':board[r][c] = 'O'
+                    elif board[r][c] == 'O':board[r][c] = 'X'
