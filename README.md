@@ -1,7 +1,94 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+
+# Nov.12
+
+- No.178 Graph Valid Tree
+
+Structure:
+
+group: [] # store which group every node belongs to
+
+Process:
+
+uses union find algorithm, assign different values for all nodes when initializing, then loop through the edge list to change connected nodes to same group, then update group[] so that other nodes belonging to same old group will be updated to the new group.
+
+- No.477 Surrounding Regions
+
+Structure:
+
+connected: list # store positions on the board that have 'O's and are connected with other 'O's
+
+fill: function( int,int -> None) # 1. change 'O's into 'f's 2.append (int,int) into connected
+
+Process:
+
+use fill to flip values of connected positions from 'O' to 'f'. After finishing this, loop through again the whole board, for those who has value 'O' but are not connected with four edges, change them to 'X', for those who has value 'f' it means that they are connected with edges, so flip them back to 'O'.
+
+the reference I looked upon used another helper function named bfs() since he thought this was a bfs problem, but in essence it does not matter if it's a bfs or dfs, essential part of the problem is to find out connected points of four edges(first&last row, first&last col), so I decided to get rid of the bfs(), only use a fill helper function. it slightly reduced the lines of code needed.
+
+- No.136 Palindrome Partitioning
+
+Structure:
+
+isPalindrome: function( str -> bool ) # check if string is a palindrome
+
+split: int # spliting position
+
+Process:
+
+for every possible spliting position, check if left part is a palindrome, if yes recursively call partition() on right part, and then combine left and right part results into tmp, and choose elements in tmp that are new to res into res.
+
+# Nov.11
+
+- No.223 Palindrome Linked List
+
+Structure:
+
+slow & fast: linked list # slow, fast pointers
+
+p: linked list # present pointer of the linked list
+
+pre: linked list # one position prior to present pointer, initiated as None
+
+p1,p2: linked list # pointers of first and second half linked list
+
+Process:
+
+slow & fast to find the middle point of linked list
+
+p & pre to reverse the second half linked list in place(O(1) space complexity)
+
+p1,p2 to check if first half linked list has same value as second half linked list(after reversing), if yes then original linked list is a palindrome
+
 # Nov.10
+
+- No.425 Letter Combinations of a Phone Number
+
+Structure:
+
+book: {} # stores number->letters relationships
+
+combination:function( list,list -> list )# create possible combinations out of elements from two lists
+
+Process:
+
+divide the string into two halves, do it recursively until it returns lists, then call combination function to create combined lists, return it to previous level.
+
+- No.442 Implement Trie
+
+Structure:
+
+chlidren: {}
+
+isWord: bool
+
+Process:
+
+use every character in the string as parent, generate their next character as children. alse setting another boolean variable indicating if that particular character is the end of the word, or isWord.
+
+isWord is used when searching a string in the trie. startsWith does not need the bool variable, just need to check if every char exists in their parents' children
 
 - No.186 Max Point on a Line
 
