@@ -1,6 +1,19 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Nov.16
+
+- No.513 Perfect Squares
+
+Structure:
+
+None
+
+Process:
+
+the trick here is to use number theory to speed up the process: any number represented as 4\*\*x*(8y+7) can be represented by 4 perfect squares, and if not represented in that way, we judge if number can be represented by sum of 2 perfect squares or 1 perfect square, if not we simply return 3 since any number can be represented by no more than 4 perfect squares.
+
+
 # Nov.13
 
 - No.508 Wiggle Sort
