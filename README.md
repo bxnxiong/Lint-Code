@@ -1,6 +1,43 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Nov.13
+
+- No.508 Wiggle Sort
+
+Structure:
+
+three: [] # store 3 consecutive num sequences from input nums
+
+top: int # store index of max num of three consecutive num
+
+Process:
+
+for every three consecutives, move the max num to the middle, then compare last element of those three, with next num to it(i.e. to compare num[i+2] and num[i+3]), if last element is greater than the next num, exchange their positions. after finishing all above, get next three consecutive nums in which we haven't found the max num. (i.e. i += 2)
+
+- No.426 Restore IP Addresses
+
+Structure:
+
+lengthSequence: function( int -> list ) # split length n into combinations of 1s,2s and 3s, they are indicators of possible lengths of IP addresses
+
+possible: bool # judge if a string sliced with certain length generated from lengthSequence is valid IP address or not
+
+Process:
+
+first given input num string s, use lengthSequence to get possible slicing lengths, then get strings using those slicing lengths, judge if each string is valid or not,by judging if integer is > 255 , or if string starts with 0
+
+- No.427 Generate Parenthesis
+
+Structure:
+
+insert: function( str -> list) # insert () into current string and return all possible insertion results
+
+start: [] # intermediate results for insertions
+
+Process:
+
+initiate start as [""], then do iteratively until n <= 0: for every element in start, call insert() and add results to new_start, reassign start with new_start
 
 # Nov.12
 
