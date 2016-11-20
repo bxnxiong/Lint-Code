@@ -1,7 +1,56 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+
+# Nov.18
+
+- No.532 Reverse Pairs
+
+Strucutre:
+
+Solution.counter: int # stores number of reverse pairs
+
+Process:
+
+use merge sort and inside the merge function, add the counter if j of right subsequence is smaller than i of left subsequence, the amount to be added to the counter should be len(left) - i since all remaining numbers after i will be greater than j too so they should also be added to the counter.
+
+- No.528 Flatten Nested List Iterator
+
+both queue and stack implementation are attempted
+
+Structure:
+
+q: [] # stack/queue
+
+Process:
+
+when hasNext() is called we pop out elements from q, and do a while loop until we find the first integer in that element. all other elements will be put back to q if the element has more than 1 sub-element. Then for the next() we can just simply pop out one element and return it.
+
+One edge case is [] inside a nested element. In this case we want to continue to next sub element of the element that's been popped out of q.
+
 # Nov.16
+
+- No.518 Super Ugly Number
+
+Structure:
+
+powers: [] # index of number that will be multiplied by i_th prime in the given prime list
+
+q:[] # stores sequences of numbers whose factors are in the given prime list
+
+Process:
+
+We create sequences factored by primes in the prime list in an increasing order, then return n_th number in that sequence
+
+- No.515 Paint House
+
+Structure:
+
+None. Use the matrix given as the input
+
+Process:
+
+this is a simple dynamic programming problem. We just need to decide the minimum cost of row i col j, by calculating the cost\[i][j]+cost\[i-1][j-1 or j+1], since the color of neighboring houses should not be the same so we use j-1 or j+1 here. in actual code we need to transform j-1 and j+1 so that they stay in 0-2 range
 
 - No.513 Perfect Squares
 
