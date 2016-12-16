@@ -14,6 +14,7 @@ class Solution:
         if head:
             pointer = head
             v1_pointer,v2_pointer = None,None
+            # get node locations and previous nodes
             if pointer.val == v1:
                 v1_pointer = pointer
                 v1_prev = None
@@ -30,9 +31,10 @@ class Solution:
                 if v1_pointer and v2_pointer:
                     break
                 pointer = pointer.next
-            
+            # check if both values exist in the linked list
             if v1_pointer and v2_pointer:
                 # check if neighboring nodes
+                # if not check, will exceed time limit
                 if (v1_pointer.next and v1_pointer.next.val == v2) or (v2_pointer.next and v2_pointer.next.val == v1):
                     if v1_pointer.next.val == v2:
                         v2_next = v2_pointer.next
@@ -53,9 +55,7 @@ class Solution:
                 else:
                     # cut off v1_pointer and v2_pointer as single nodes
                     v1_next = v1_pointer.next
-                    #v1_pointer.next = None
                     v2_next = v2_pointer.next
-                    #v2_pointer.next = None
                     
                     # swap
                     if v1_prev and v2_prev:
