@@ -1,6 +1,25 @@
 # Lint-Code
 history of dummy tries on Lint Code problems
 
+# Dec.16
+
+- No.511 Swap Two Nodes In Linked List
+
+Structure:
+
+v1_pointer,v2_pointer = None,None # pointers to nodes having values == v1 and values == v2
+
+v1_prev,v2_prev = None,None # pointers to previous nodes of v1_pointer and v2_pointer
+
+v1_next,v2_next = None,None # pointers to next nodes of v1_pointer and v2_pointer
+
+Process:
+
+First find the pointers to nodes having values v1 and v2. If we find at least one of them missing, we do nothing and return the original linked list directly. Otherwise:
+
+1. if nodes are neighbor nodes(we can check by _next_ nodes and _prev_ nodes) we swap them directly, using only one _prev_ and one _next_ pointer. This is crucial for the time limit requirement of this problem
+
+2. if they are not neighbor nodes, we swap them, using both two _prev_ and _next_ pointers.
 
 # Nov.18
 
